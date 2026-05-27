@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<html lang="en-US">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <h1>Infected Presence Prediction Model</h1>
+    <div id="output"></div>
+    <img src="Images/uc-logo.png" alt="Umbrella logo">
+    <script>
+        "use strict";
+        var infected;
+        var infectionRate = 1.262;
+        var currentMonth = 1;
+        var totalMonths = 12;
+        var output = document.getElementById("output");
+
+        let input = prompt("Enter the number of currently infected people:");
+
+        if (input !== null && input.trim() !== "" && Number.isInteger(Number(input))) {
+            infected = Number(input);
+
+            while (currentMonth <= totalMonths) {
+                infected = Math.ceil(Math.pow(infected, infectionRate))
+                output.innerHTML += "<br>There will be " + infected + " infected after " + currentMonth + " months.";
+                currentMonth++;
+            }
+
+        }
+        else {
+            output.innerHTML = "Please reload the application and enter a whole number when asked to enter the number of infected people.";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
