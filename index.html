@@ -12,21 +12,28 @@
 
 <body>
     <h1>Infected Presence Prediction Model</h1>
+
+    <!-- data output for calculation-->
     <div id="output"></div>
-    <img src="Images/uc-logo.png" alt="Umbrella logo">
+
+    <img src="Images/uc-logo.png" alt="Umbrella corporation logo">
     <script>
         "use strict";
+        // global variables
         var infected;
         var infectionRate = 1.262;
         var currentMonth = 1;
         var totalMonths = 12;
         var output = document.getElementById("output");
 
+        // Prompts the user to enter the number of currently infected people
         let input = prompt("Enter the number of currently infected people:");
 
+        // validates that the input is not null, not empty, is a whole number and is greater than 0
         if (input !== null && input.trim() !== "" && Number.isInteger(Number(input)) && Number(input) > 0) {
             infected = Number(input);
 
+            // loop to predict the number of infected over 12 months loop only runs while currentMonth is not greater that totalMonths.
             while (currentMonth <= totalMonths) {
                 infected = Math.ceil(Math.pow(infected, infectionRate))
                 output.innerHTML += "<br>There will be " + infected + " infected after " + currentMonth + " months.";
@@ -35,6 +42,7 @@
 
         }
         else {
+            // display error message if input is not a whole number
             output.innerHTML = "Please reload the application and enter a whole number when asked to enter the number of infected people.";
 
         }
