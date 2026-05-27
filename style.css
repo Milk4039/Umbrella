@@ -1,0 +1,17 @@
+body {
+    font-size: 22px;
+    font-family: sans-serif;
+    background-color: lightblue;
+   
+}
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+img {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 500px;
+}
