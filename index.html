@@ -24,7 +24,7 @@
 
         let input = prompt("Enter the number of currently infected people:");
 
-        if (input !== null && input.trim() !== "" && Number.isInteger(Number(input))) {
+        if (input !== null && input.trim() !== "" && Number.isInteger(Number(input)) && Number(input) > 0) {
             infected = Number(input);
 
             while (currentMonth <= totalMonths) {
